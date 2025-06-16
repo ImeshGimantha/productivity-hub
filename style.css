@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #12161d;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60px;
+    background-color: #171c26;
+    padding: 6px 0;
+}
+
+.sidebar ul {
+    margin-top: 200px;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 73%;
+    margin: 0 0 0 6px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1c2f3c;
+    color: #00c9a7;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50px);
+    height: 35px;
+    width: 122px;
+    color: #171c26;
+    background-color: #00c9a7;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    line-height: 35px;
+    text-align: center;
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    top: 115%;
+    opacity: 1;
+}
+
+.sidebar ul li a i {
+    height: 40px;
+    min-width: 46px;
+    border-radius: 12px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.main-content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 60px);
+    left: 240px;
+}
+
+.main-content .text {
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    margin: 12px;
+}
