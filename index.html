@@ -15,7 +15,7 @@
         <div class="sidebar">
             <ul class="nav-list" style="list-style-type: none;">
                 <li>
-                    <a href="#">
+                    <a href="#" class="active-tab">
                         <i class='bx bx-list-check'></i>
                     </a>
                     <span class="tooltip">To-Do List</span>
@@ -47,9 +47,69 @@
         </div>
 
         <div class="main-content">
-            <div class="text">Hello World</div>
+            
+            <div class="header-section">
+                <header>
+                    <h1>Productivity Hub</h1>
+                    <div class="actions">
+                        <i class='bx bx-moon' ></i>
+                        <img src="img/profile.png" alt="profile">
+                    </div>
+                </header>
+                <hr>
+            </div>
+
+            <div class="home-section">
+                <div class="todo-list cards">
+                    <h4 class="card-title">To-Do List</h4>
+                    <input type="text" id="add-input" placeholder="Add Task">
+                    <button id="add-btn">Add</button><br>
+                    <input type="checkbox" name="test" id="checkbox">
+                    <label for="checkbox">test</label><br>
+                    <input type="checkbox" name="test" id="checkbox">
+                    <label for="checkbox">test</label><br>
+                    <input type="checkbox" name="test" id="checkbox">
+                    <label for="checkbox">test</label><br><br>
+                </div>
+
+                <div class="pomodoro-timer cards">
+                    <h4 class="card-title">Pomodoro Timer</h4>
+                    <span id="time">12:30</span>
+                    <button class="timer-btn" id="start-btn">Start</button>
+                    <button class="timer-btn" id="cancel-btn">Stop</button>
+                    <br>
+                </div>
+
+                <div class="notes cards">
+                    <h4 class="card-title">Notes</h4>
+                    <textarea name="note-area" id="note-area" placeholder="Write your thoughts..."></textarea>
+                    <button id="add-textarea-btn">Save</button>
+                    <br><br><br><br>
+                </div>
+
+                <div class="calender cards">
+                    <h4 class="card-title">Calendar</h4>
+                    
+                    <table>
+                        <thead>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </thead>
+                        <tbody id="calender-body"></tbody>
+                    </table>
+
+                    <br><br>
+                </div>
+            </div>
         </div>
         
+        <script src="script.js"></script>
+
     </body>
 
-</html>
+</html>  
