@@ -13,6 +13,10 @@ body {
     background-color: #12161d;
 }
 
+.hidden {
+    display: none;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -171,6 +175,7 @@ body {
     cursor: pointer;
 }
 
+.home-section .todo-list .checkbox,
 .home-section .todo-list #checkbox {
     margin-top: 10px;
     margin-left: 15px;
@@ -235,19 +240,18 @@ body {
 }
 
 .home-section .calender table {
-    display: block;
+    display: table;
+    margin: 15px auto 0 auto;
     flex-grow: 1;
     border-collapse: collapse;
-    /* height: 100%; */
-    margin-left: 15px;
-    margin-top: 10px;
+    height: 100%;
 }
 
 .home-section .calender table thead th,
 .home-section .calender table tbody td {
     border: 2px solid rgb(38, 48, 63);
     text-align: center;
-    padding: 5px;
+    padding: 8px;
 }
 
 .home-section .calender table thead th {
@@ -263,4 +267,314 @@ body {
 .home-section .calender table tbody td:hover {
     color: #9bbed2;
     cursor: pointer;
+}
+
+.home-section .weather #weather-details {
+    text-align: center;
+}
+
+.home-section .weather #weather-details span {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.home-section .weather #weather-details #city-name {
+    padding: 5px 40px;
+    border-radius: 3px;
+    background-color: #1d242d;
+    border: 1px solid rgb(38, 48, 63);
+}
+
+
+.home-section .weather #weather-details #temperature {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.home-section .weather #weather-details #temperature img {
+    width: 27px;
+    height: 27px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.todo-section {
+    margin-top: 30px;
+    color: #fff;
+    text-align: center;    
+}
+
+.todo-section .todo-area {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    border: 2px solid rgba(128, 128, 128, 0.311);
+    background-color: #181f27;
+    width: 48%;
+    margin: 10px 0 0 10px;
+}
+
+.todo-section .todo-area #add-input {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    padding: 3px;
+    background-color: #1d242d;
+    border: 1px solid rgb(38, 48, 63);
+    color: #cde4f1;
+    width: 75%;
+}
+
+.todo-section .todo-area #save-btn {
+    padding: 3px 8px;
+    background-color: #1f2837;
+    color: #cde4f1;
+    border-radius: 3px;
+    border: 1px solid rgb(38, 48, 63);
+    cursor: pointer;
+}
+
+.todo-section .todo-area #save-btn:hover {
+    background-color: #182336;
+}
+
+.todo-section .todo-area #checkbox-area .checkbox {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 15px;
+    background-color: #181f27;
+    color: #020c18;
+    border-radius: 3px;
+    left: 4%;
+    cursor: pointer;
+}
+
+.todo-section .todo-area label {
+    position: absolute;
+    margin-left: 5px;
+    color: #fff;
+    text-align: left;
+    left: 13%;
+    font-size: 18px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+.todo-section .todo-area .card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.timer-section {
+    margin-top: 30px;
+    color: #fff;
+    text-align: center;    
+}
+
+.timer-section .cards {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    border: 2px solid rgba(128, 128, 128, 0.311);
+    background-color: #181f27;
+    width: 48%;
+    margin: 10px 0 0 10px;
+}
+
+.timer-section .pomodoro-timer .card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.timer-section .pomodoro-timer #time {
+    margin-top: 20px;
+    display: block;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(240, 254, 255);
+}
+
+.timer-section .pomodoro-timer .timer-btn {
+    padding: 5px;
+    display: block;
+    width: 85%;
+    color: #cde4f1;
+    background-color: #1d242d;
+    border: 1px solid rgb(38, 48, 63);
+    border-radius: 2px;
+    margin: 18px auto 0;
+    cursor: pointer;
+}
+
+.note-section {
+    margin-top: 30px;
+    color: #fff;
+    text-align: center;    
+}
+
+.note-section .cards {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    border: 2px solid rgba(128, 128, 128, 0.311);
+    background-color: #181f27;
+    width: 48%;
+    margin: 10px auto;
+}
+
+.note-section .notes .card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.note-section .notes textarea {
+    margin-top: 15px;
+    margin-left: 15px;
+    box-sizing: border-box;
+    width: 85%;
+    height: 100px;
+    border-radius: 3px;
+    border: 1px solid rgb(38, 48, 63);
+    color: #cde4f1;
+    background-color: #1d242d;
+    resize: none;
+}
+
+.note-section .notes #add-textarea-btn {
+    display: block;
+    position: absolute;
+    margin-right: 15px;
+    /* right: calc(15% - 15px); */
+    left: 84%;    
+    cursor: pointer;
+    padding: 3px 8px;
+    background-color: #1f2837;
+    color: #cde4f1;
+    border-radius: 3px;
+    border: 1px solid rgb(38, 48, 63);
+    margin-top: 15px;
+}
+
+.note-section .note-body {
+    display: block;
+    margin: 20px auto;
+    overflow: auto;
+}
+
+.note-section .note-body .note-card {
+    background-color: #1e2a3668;
+    display: block;
+    width: 80%;
+    margin: 15px auto 15px auto;
+    border-radius: 5px;
+    border: 1px solid rgb(40, 52, 69);
+}
+
+.note-section .note-body .note-card p {
+    text-align: left;
+    margin: 20px;
+}
+
+.calender-section {
+    margin-top: 30px;
+    color: #fff;
+    text-align: center;    
+}
+
+.calender-section .cards {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    border: 2px solid rgba(128, 128, 128, 0.311);
+    background-color: #181f27;
+    width: 48%;
+    margin: 10px 0 0 10px;
+}
+
+.calender-section .calender .card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.calender-section .calender table {
+    display: table;
+    margin: 25px auto 0 auto;
+    flex-grow: 1;
+    border-collapse: collapse;
+    height: 100%;
+}
+
+.calender-section .calender table thead th,
+.calender-section .calender table tbody td {
+    border: 2px solid rgb(38, 48, 63);
+    text-align: center;
+    padding: 15px;
+}
+
+.calender-section .calender table thead th {
+    background-color: #1c2f3c;
+    color: #fff;
+}
+
+.calender-section .calender table tbody td {
+    font-weight: bold;
+    color: #cde4f1;
+}
+
+.calender-section .calender table tbody td:hover {
+    color: #9bbed2;
+    cursor: pointer;
+}
+
+.weather-section {
+    margin-top: 30px;
+    color: #fff;
+    text-align: center;    
+}
+
+.weather-section .cards {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    border: 2px solid rgba(128, 128, 128, 0.311);
+    background-color: #181f27;
+    width: 48%;
+    margin: 10px 0 0 10px;
+}
+
+.weather-section .weather .card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.weather-section .weather #weather-details {
+    text-align: center;
+}
+
+.weather-section .weather #weather-details span {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.weather-section .weather #weather-details #city-name {
+    padding: 5px 40px;
+    border-radius: 3px;
+    background-color: #1d242d;
+    border: 1px solid rgb(38, 48, 63);
+}
+
+
+.weather-section .weather #weather-details #temperature {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.weather-section .weather #weather-details #temperature img {
+    width: 27px;
+    height: 27px;
+    margin: 0;
+    padding: 0;
 }

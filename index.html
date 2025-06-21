@@ -8,6 +8,18 @@
         <link rel="stylesheet" href="style.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            .todo-section .todo-area #checkbox-area .checkbox {
+                position: absolute;
+                margin-top: 10px;
+                margin-left: 15px;
+                background-color: #181f27;
+                color: #020c18;
+                border-radius: 3px;
+                left: 4%;
+                cursor: pointer;
+            }
+        </style>
     </head>
 
     <body>
@@ -15,31 +27,37 @@
         <div class="sidebar">
             <ul class="nav-list" style="list-style-type: none;">
                 <li>
-                    <a href="#" class="active-tab">
+                    <a href="#" id="main-home-section" class="active-tab">
+                        <i class='bx bxs-home'></i>
+                    </a>
+                    <span class="tooltip">Home</span>
+                </li>
+                <li>
+                    <a href="#" id="todo-section">
                         <i class='bx bx-list-check'></i>
                     </a>
                     <span class="tooltip">To-Do List</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" id="timer-section">
                         <i class='bx bx-timer' ></i>
                     </a>
                     <span class="tooltip">Pomodoro Timer</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" id="note-section">
                         <i class='bx bxs-notepad'></i>
                     </a>
                     <span class="tooltip">Notes</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" id="calender-section">
                         <i class='bx bxs-calendar' ></i>
                     </a>
                     <span class="tooltip">Calendar</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" id="weather-section">
                         <i class='bx bxs-cloud' ></i>
                     </a>
                     <span class="tooltip">Weather</span>
@@ -59,17 +77,19 @@
                 <hr>
             </div>
 
-            <div class="home-section">
+            <div class="home-section screen" id="home-section" active="true">
                 <div class="todo-list cards">
                     <h4 class="card-title">To-Do List</h4>
                     <input type="text" id="add-input" placeholder="Add Task">
                     <button id="add-btn">Add</button><br>
-                    <input type="checkbox" name="test" id="checkbox">
-                    <label for="checkbox">test</label><br>
-                    <input type="checkbox" name="test" id="checkbox">
-                    <label for="checkbox">test</label><br>
-                    <input type="checkbox" name="test" id="checkbox">
-                    <label for="checkbox">test</label><br><br>
+                    <div>
+                        <input type="checkbox" name="test" id="checkbox">
+                        <label for="checkbox">test</label><br>
+                        <input type="checkbox" name="test" id="checkbox">
+                        <label for="checkbox">test</label><br>
+                        <input type="checkbox" name="test" id="checkbox">
+                        <label for="checkbox">test</label>
+                    </div><br>
                 </div>
 
                 <div class="pomodoro-timer cards">
@@ -105,7 +125,93 @@
 
                     <br><br>
                 </div>
+
+                <div class="weather cards">
+                    <h4 class="card-title">Weather</h4>
+                    <div id="weather-details">
+                        <span id="city-name">Galle</span>
+                        <span id="temperature">32C</span>
+                    </div>
+                    <br><br>
+                </div>
             </div>
+
+            <div class="todo-section hidden screen" active="false">
+                <div class="todo-area">
+                    <h4 class="card-title">To-Do List</h4>
+                    <input type="text" id="add-input" placeholder="Add Task">
+                    <button id="save-btn">Add</button><br>
+                    <div id="checkbox-area">
+                        <input type="checkbox" name="test1" class="checkbox" id="check1">
+                        <label for="check1">test</label><br>
+                        <input type="checkbox" name="test2" class="checkbox" id="check2">
+                        <label for="check2">test</label><br>
+                        <input type="checkbox" name="test3" class="checkbox" id="check3">
+                        <label for="check3">test</label>
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="timer-section hidden screen" active="false">
+                <div class="pomodoro-timer cards">
+                    <h4 class="card-title">Pomodoro Timer</h4>
+                    <span id="time">25:00</span>
+                    <button class="timer-btn" id="start-btn">Start</button>
+                    <button class="timer-btn" id="cancel-btn">Stop</button>
+                    <br>
+                </div>
+            </div>
+
+            <div class="note-section hidden screen" active="false">
+                <div class="notes cards">
+                    <h4 class="card-title">Notes</h4>
+                    <textarea name="note-area" id="note-area" placeholder="Write your thoughts..."></textarea>
+                    <button id="add-textarea-btn">Save</button>
+                    <br><br><br><br>
+                </div>
+                <div class="note-body cards">
+                </div>
+            </div>
+
+            <template id="note-card">
+                <div class="note-card">
+                    <p></p>
+                </div>
+            </template>
+
+            <div class="calender-section hidden screen" active="false">
+                <div class="calender cards">
+                    <h4 class="card-title">Calendar</h4>
+                    
+                    <table>
+                        <thead>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </thead>
+                        <tbody id="calender-body"></tbody>
+                    </table>
+
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="weather-section hidden screen" active="false">
+                <div class="weather cards">
+                    <h4 class="card-title">Weather</h4>
+                    <div id="weather-details">
+                        <span id="city-name">Galle</span>
+                        <span id="temperature">32C</span>
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+
         </div>
         
         <script src="script.js"></script>
